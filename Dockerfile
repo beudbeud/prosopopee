@@ -2,13 +2,9 @@ FROM alpine:3.7
 
 LABEL maintainer="beudbeud@beudibox.fr"
 
-RUN apk update && apk add build-base python3 python3-dev graphicsmagick ffmpeg git rsync
+RUN apk update && apk add build-base python3 python3-dev graphicsmagick ffmpeg
 
-RUN git clone https://github.com/Psycojoker/prosopopee.git 
-
-WORKDIR prosopopee
-
-RUN pip3 install ./
+RUN pip3 install prosopopee==0.8.2
 
 RUN mkdir /site
 
